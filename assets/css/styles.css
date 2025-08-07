@@ -1,0 +1,175 @@
+/* Glass Effect Styles */
+.glass-effect {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.dark .glass-effect {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-card {
+    backdrop-filter: blur(16px) saturate(180%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.1);
+}
+
+.dark .glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Gradient Background */
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+}
+
+/* Chart Animations */
+.chart-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2s ease-in-out forwards;
+}
+
+.chart-bar {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    animation: growBar 1.5s ease-out forwards;
+}
+
+@keyframes growBar {
+    to { transform: scaleY(1); }
+}
+
+/* Shimmer Effect */
+.shimmer-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* Hover Effects */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dark .hover-lift:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating Orbs */
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-orb:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.floating-orb:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.floating-orb:nth-child(3) {
+    animation-delay: 4s;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+}
+
+/* Filter Button States */
+.filter-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    color: white !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .floating-orb {
+        display: none;
+    }
+}   
+
+/* Password Toggle Enhancements */
+#togglePassword {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#togglePassword:hover {
+    background-color: rgba(107, 114, 128, 0.1);
+    border-radius: 6px;
+}
+
+#togglePassword:active {
+    transform: scale(0.95) !important;
+}
+
+#togglePassword svg {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Focus states for accessibility */
+#togglePassword:focus {
+    outline: 2px solid rgba(93, 92, 222, 0.5);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+/* Ensure the password input has proper spacing for the toggle button */
+#password {
+    padding-right: 3rem !important;
+}
+
+/* Animation for icon transitions */
+.icon-transition {
+    transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+/* Prevent text selection on the toggle button */
+#togglePassword {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
